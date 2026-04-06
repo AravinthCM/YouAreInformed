@@ -1,0 +1,42 @@
+* {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* base styles (Mobile/Small Screens) */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
+
+/* Medium screens (Tablets, ~768px and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 25px 40px;
+  }
+}
+
+/* Large screens (Laptops, ~1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    padding: 25px 100px;
+  }
+}
+
+/* Extra Large screens (Desktop, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 35px 120px; /* reduced from 195px — covers 14" / zoomed views */
+    max-width: 100%;
+  }
+}
+
+/* Wide screens (1600px and up — true 15.6"+ at normal zoom) */
+@media (min-width: 1600px) {
+  .container {
+    padding: 35px 195px;
+  }
+}
