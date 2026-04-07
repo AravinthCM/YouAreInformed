@@ -8,7 +8,7 @@ import content from "./footer.json";
 
 export default function Footer() {
   return (
-    <Box component="footer" sx={{ bgcolor: "neutral.900", py: 6 }}>
+    <Box id="contact" component="footer" sx={{ bgcolor: "neutral.900", py: 6 }}>
       <Container>
         <Stack
           direction={{ xs: "column", md: "row" }}

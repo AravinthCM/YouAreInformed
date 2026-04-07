@@ -27,6 +27,7 @@ const IconRenderer = ({ name }: { name: string }) => {
 export default function HowItWorks() {
   return (
     <Box
+      id="how-it-works"
       component="section"
       sx={{ py: { xs: 10, md: 8 }, bgcolor: "neutral.50" }}
     >
