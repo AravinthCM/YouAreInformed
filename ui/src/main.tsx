@@ -1,19 +1,26 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.tsx";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "./theme/theme.ts"; // make sure this path is correct
+import theme from "./theme/theme";
 
-createRoot(document.getElementById("root")!).render(
+const rootElement = document.getElementById("root");
+
+if (!rootElement) {
+  throw new Error(
+    "Root element not found. Check index.html has <div id='root'></div>",
+  );
+}
+
+createRoot(rootElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* optional but recommended */}
+      <CssBaseline />
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

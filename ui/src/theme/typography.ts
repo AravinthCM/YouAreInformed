@@ -1,163 +1,73 @@
-import type { TypographyOptions } from "@mui/material/styles/createTypography";
+// src/theme/typography.ts
+import { createTheme } from "@mui/material/styles";
 
-/**
- * typography.ts
- *
- * Responsive type scale using clamp(min, fluid, max).
- * Base: 16px | Scale: Major Third (×1.25)
- * Fonts: Source Sans 3 (headings) · Poppins (body) · DM Sans (logo)
- */
+const baseTheme = createTheme();
 
-// Extend MUI's TypographyVariantsOptions to include custom variants
-declare module "@mui/material/styles" {
-  interface TypographyVariants {
-    logo: React.CSSProperties;
-    overline2: React.CSSProperties;
-  }
-  interface TypographyVariantsOptions {
-    logo?: React.CSSProperties;
-    overline2?: React.CSSProperties;
-  }
-}
+const typography = {
+  fontFamily: "'Manrope', sans-serif",
 
-declare module "@mui/material/Typography" {
-  interface TypographyPropsVariantOverrides {
-    logo: true;
-    overline2: true;
-  }
-}
-
-// ─── Font family tokens ───────────────────────────────────────────────────────
-export const FONT_HEADING = "'Source Sans 3', sans-serif";
-export const FONT_BODY = "'Poppins', sans-serif";
-export const FONT_LOGO = "'DM Sans', sans-serif";
-
-// ─── Google Fonts import string (paste in index.html or _document.tsx) ────────
-// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Poppins:wght@400;500;600&family=Source+Sans+3:wght@600;700&display=swap');
-
-const typography: TypographyOptions = {
-  fontFamily: FONT_BODY,
-  htmlFontSize: 16,
-
-  // ─── Headings ───────────────────────────────────────────────────────────────
   h1: {
-    fontFamily: FONT_HEADING,
-    // 32px → 56px fluid
-    fontSize: "clamp(2rem, 4vw + 1rem, 3.5rem)",
-    fontWeight: 700,
-    lineHeight: 1.15,
-    letterSpacing: "-0.02em",
-  },
-  h2: {
-    fontFamily: FONT_HEADING,
-    // 26px → 42px fluid
-    fontSize: "clamp(1.625rem, 3vw + 0.75rem, 2.625rem)",
-    fontWeight: 700,
-    lineHeight: 1.2,
-    letterSpacing: "-0.015em",
-  },
-  h3: {
-    fontFamily: FONT_HEADING,
-    // 22px → 34px fluid
-    fontSize: "clamp(1.375rem, 2vw + 0.75rem, 2.125rem)",
-    fontWeight: 600,
-    lineHeight: 1.25,
-    letterSpacing: "-0.01em",
-  },
-  h4: {
-    fontFamily: FONT_HEADING,
-    // 18px → 26px fluid
-    fontSize: "clamp(1.125rem, 1.5vw + 0.5rem, 1.625rem)",
-    fontWeight: 600,
-    lineHeight: 1.3,
-    letterSpacing: "-0.005em",
-  },
-  h5: {
-    fontFamily: FONT_HEADING,
-    fontSize: "1.25rem", // 20px — fixed; too small to need fluid
-    fontWeight: 600,
-    lineHeight: 1.4,
-  },
-  h6: {
-    fontFamily: FONT_HEADING,
-    fontSize: "1rem", // 16px
-    fontWeight: 600,
-    lineHeight: 1.4,
-    letterSpacing: "0.005em",
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: 800,
+    lineHeight: 1.1,
+    letterSpacing: "-0.03em",
+    fontSize: "2rem", // xs  — mobile
+    [baseTheme.breakpoints.up("sm")]: { fontSize: "2rem" }, // 640px — tablet
+    [baseTheme.breakpoints.up("md")]: { fontSize: "2.5rem" }, // 768px — small laptop
+    [baseTheme.breakpoints.up("lg")]: { fontSize: "2.75rem" }, // 1024px — laptop ✅ not too big
+    [baseTheme.breakpoints.up("xl")]: { fontSize: "3.75rem" }, // 1280px — desktop only
   },
 
-  // ─── Body ────────────────────────────────────────────────────────────────────
-  body1: {
-    fontFamily: FONT_BODY,
-    fontSize: "1rem", // 16px — never fluid; keeps reading comfort on all screens
-    fontWeight: 400,
-    lineHeight: 1.65,
-    letterSpacing: "0.01em",
+  h2: {
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: 800,
+    lineHeight: 1.15,
+    letterSpacing: "-0.03em",
+    fontSize: "1.5rem",
+    [baseTheme.breakpoints.up("sm")]: { fontSize: "1.75rem" },
+    [baseTheme.breakpoints.up("md")]: { fontSize: "2rem" },
+    [baseTheme.breakpoints.up("lg")]: { fontSize: "2.25rem" },
+    [baseTheme.breakpoints.up("xl")]: { fontSize: "3rem" },
   },
+
+  h3: {
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: 700,
+    lineHeight: 1.3,
+    fontSize: "1.1rem",
+    [baseTheme.breakpoints.up("md")]: { fontSize: "1.25rem" },
+    [baseTheme.breakpoints.up("xl")]: { fontSize: "1.5rem" },
+  },
+
+  body1: {
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: 400,
+    lineHeight: 1.75,
+    fontSize: "0.9375rem", // slightly smaller on mobile
+    [baseTheme.breakpoints.up("md")]: { fontSize: "1rem" },
+    [baseTheme.breakpoints.up("xl")]: { fontSize: "1.125rem" }, // text-lg only on wide desktop
+  },
+
   body2: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.875rem", // 14px
+    fontFamily: "'Manrope', sans-serif",
     fontWeight: 400,
     lineHeight: 1.6,
-    letterSpacing: "0.01em",
+    fontSize: "0.8125rem",
+    [baseTheme.breakpoints.up("md")]: { fontSize: "0.875rem" },
   },
 
-  // ─── Supporting ──────────────────────────────────────────────────────────────
-  subtitle1: {
-    fontFamily: FONT_BODY,
-    fontSize: "1.125rem", // 18px
-    fontWeight: 500,
-    lineHeight: 1.5,
-    letterSpacing: "0.005em",
-  },
-  subtitle2: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.875rem", // 14px
-    fontWeight: 500,
-    lineHeight: 1.5,
-    letterSpacing: "0.01em",
-  },
-  caption: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.75rem", // 12px
-    fontWeight: 400,
-    lineHeight: 1.5,
-    letterSpacing: "0.025em",
-  },
-  overline: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.6875rem", // 11px
-    fontWeight: 600,
-    lineHeight: 1.5,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-  },
-
-  // ─── Button ──────────────────────────────────────────────────────────────────
   button: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.9375rem", // 15px
-    fontWeight: 600,
-    lineHeight: 1.5,
-    letterSpacing: "0.02em",
-    textTransform: "none",
+    fontFamily: "'Manrope', sans-serif",
+    fontWeight: 700,
+    textTransform: "none" as const,
+    fontSize: "0.9375rem",
   },
 
-  // ─── Custom variants ─────────────────────────────────────────────────────────
-  logo: {
-    fontFamily: FONT_LOGO,
-    // 20px → 28px fluid
-    fontSize: "clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem)",
+  caption: {
+    fontFamily: "'Manrope', sans-serif",
     fontWeight: 700,
-    lineHeight: 1,
-    letterSpacing: "-0.025em",
-  },
-  overline2: {
-    fontFamily: FONT_BODY,
-    fontSize: "0.625rem", // 10px — tighter label
-    fontWeight: 700,
-    lineHeight: 1.4,
-    letterSpacing: "0.12em",
+    fontSize: "0.6875rem",
+    letterSpacing: "0.1em",
     textTransform: "uppercase" as const,
   },
 };

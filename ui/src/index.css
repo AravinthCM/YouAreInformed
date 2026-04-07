@@ -1,42 +1,43 @@
-* {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+/* ── Google Fonts ──────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
-/* base styles (Mobile/Small Screens) */
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px 16px;
-  box-sizing: border-box;
-}
+/*
+  All global resets (box-sizing, body, #root) are handled by
+  MuiCssBaseline in theme.ts — keep this file minimal.
+  Only put here: font imports, animations, className utilities.
+*/
 
-/* Medium screens (Tablets, ~768px and up) */
-@media (min-width: 768px) {
-  .container {
-    padding: 25px 40px;
+/* ── Animations ────────────────────────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
-/* Large screens (Laptops, ~1024px and up) */
-@media (min-width: 1024px) {
-  .container {
-    padding: 25px 100px;
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
   }
 }
 
-/* Extra Large screens (Desktop, 1200px and up) */
-@media (min-width: 1200px) {
-  .container {
-    padding: 35px 120px; /* reduced from 195px — covers 14" / zoomed views */
-    max-width: 100%;
-  }
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
 }
 
-/* Wide screens (1600px and up — true 15.6"+ at normal zoom) */
-@media (min-width: 1600px) {
-  .container {
-    padding: 35px 195px;
-  }
+/* ── Glass panel (floating cards) ──────────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
