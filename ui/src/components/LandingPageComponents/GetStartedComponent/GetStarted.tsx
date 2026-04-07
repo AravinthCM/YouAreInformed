@@ -11,8 +11,9 @@ import content from "./get-started.json";
 export default function GetStarted() {
   return (
     <Box
+      id="get-started"
       component="section"
-      sx={{ py: { xs: 10, md: 15 }, bgcolor: "neutral.0" }}
+      sx={{ py: { xs: 10, md: 8 }, bgcolor: "neutral.0" }}
     >
       <Container>
         <Box sx={{ textAlign: "center" }}>

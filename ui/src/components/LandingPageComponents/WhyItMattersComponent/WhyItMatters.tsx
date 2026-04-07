@@ -7,7 +7,7 @@ import content from "./whyItMatters.json";
 export default function WhyItMatters() {
   return (
     <Box
-      id="WhyItMatters"
+      id="why-it-matters"
       component="section"
       sx={{
         py: { xs: 5, md: 8 },
