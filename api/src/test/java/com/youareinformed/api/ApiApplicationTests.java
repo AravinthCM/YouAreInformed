@@ -1,4 +1,4 @@
-package com.careersempowered.api;
+package com.youareinformed.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
