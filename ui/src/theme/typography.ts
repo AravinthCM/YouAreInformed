@@ -23,7 +23,7 @@ const typography = {
     fontWeight: 800,
     lineHeight: 1.15,
     letterSpacing: "-0.03em",
-    fontSize: "1.5rem",
+    fontSize: "1.8rem",
     [baseTheme.breakpoints.up("sm")]: { fontSize: "1.75rem" },
     [baseTheme.breakpoints.up("md")]: { fontSize: "2rem" },
     [baseTheme.breakpoints.up("lg")]: { fontSize: "2.25rem" },
