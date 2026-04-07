@@ -32,11 +32,11 @@ const typography = {
 
   h3: {
     fontFamily: "'Manrope', sans-serif",
-    fontWeight: 700,
+    fontWeight: 900,
     lineHeight: 1.3,
     fontSize: "1.1rem",
     [baseTheme.breakpoints.up("md")]: { fontSize: "1.25rem" },
-    [baseTheme.breakpoints.up("xl")]: { fontSize: "1.5rem" },
+    [baseTheme.breakpoints.up("xl")]: { fontSize: "2rem" },
   },
 
   body1: {
