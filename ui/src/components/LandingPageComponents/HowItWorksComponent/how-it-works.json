@@ -1,0 +1,21 @@
+{
+  "eyebrow": "How it works",
+  "headline": "Simple. Powerful. Yours.",
+  "steps": [
+    {
+      "iconName": "tune",
+      "title": "Tell us your numbers",
+      "body": "Income, spending, savings — captured simply with easy number inputs. Individual or household, your choice."
+    },
+    {
+      "iconName": "calculate",
+      "title": "We crunch it instantly",
+      "body": "Your inputs are measured against the trusted 50/30/20 rule — Needs, Wants and Future Me — in seconds."
+    },
+    {
+      "iconName": "monitoring",
+      "title": "See your financial score",
+      "body": "Understand exactly where you stand, what's working and what to do next — with a downloadable full report."
+    }
+  ]
+}
